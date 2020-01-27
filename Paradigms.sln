@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paradigms", "Paradigms\Paradigms.csproj", "{19D954E4-A200-4C67-86DD-4E9760C1E42D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParadigmsTests", "ParadigmsTests\ParadigmsTests.csproj", "{93E0D157-D5DD-46C2-877E-F4D8289B2141}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19D954E4-A200-4C67-86DD-4E9760C1E42D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D954E4-A200-4C67-86DD-4E9760C1E42D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19D954E4-A200-4C67-86DD-4E9760C1E42D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19D954E4-A200-4C67-86DD-4E9760C1E42D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93E0D157-D5DD-46C2-877E-F4D8289B2141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E0D157-D5DD-46C2-877E-F4D8289B2141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E0D157-D5DD-46C2-877E-F4D8289B2141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E0D157-D5DD-46C2-877E-F4D8289B2141}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA719611-819F-46A8-86C1-1A69855EE5A8}
+	EndGlobalSection
+EndGlobal
