@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Paradigms.Module_3
 {
@@ -10,11 +11,6 @@ namespace Paradigms.Module_3
 
         public Polynomial(params double[] coeffs)
         {
-            if (coeffs.Length < 2)
-            {
-                throw new ArgumentException("There must be at least 2 coefficients");
-            }
-
             _coeffs = coeffs;
         }
 
@@ -112,13 +108,47 @@ namespace Paradigms.Module_3
 
         private static Polynomial OperationDiv(Polynomial firstPolynomial, Polynomial secondPolynomial)
         {
-            int lengthNewPolynomial = firstPolynomial._coeffs.Length - secondPolynomial._coeffs.Length;
-            double[] coeffs = new double[lengthNewPolynomial];
+            if (firstPolynomial._coeffs[firstPolynomial._coeffs.Length-1] == 0)
+            {
+                throw new ArithmeticException("The leading term of the divisible polynomial cannot be 0");
+            }
 
+            if (secondPolynomial._coeffs[secondPolynomial._coeffs.Length - 1] == 0)
+            {
+                throw new ArithmeticException("The leading term of the divisor polynomial cannot be 0");
+            }
+
+            double[] remainder = (double[])firstPolynomial._coeffs.Clone();
+            double[] coeffs = new double[firstPolynomial._coeffs.Length - secondPolynomial._coeffs.Length + 1];
+
+            for (int i = 0; i < coeffs.Length; i++)
+            {
+                //if (firstPolynomial._coeffs[i] == 0) continue;
+
+                double coeff = remainder[firstPolynomial._coeffs.Length - i - 1] / secondPolynomial._coeffs[secondPolynomial._coeffs.Length-1];
+                coeffs[coeffs.Length - i - 1] = coeff;
+
+                for (int j = 0; j < secondPolynomial._coeffs.Length; j++)
+                {
+                    //if (secondPolynomial._coeffs[j] == 0) continue;
+
+                    remainder[remainder.Length - i - j - 1] -= coeff * secondPolynomial._coeffs[secondPolynomial._coeffs.Length - j - 1];
+                }
+            }
             
+            return new Polynomial(coeffs);
+        }
 
+        private static Polynomial OperationInverse(Polynomial polynomial)
+        {
+            double[] coeffs = new double[polynomial._coeffs.Length];
+            
+            for(int i = 0, k = polynomial._coeffs.Length - 1; i < polynomial._coeffs.Length; i++, k--)
+            {
+                coeffs[i] = polynomial._coeffs[k];
+            }
 
-            return new Polynomial();
+            return new Polynomial(coeffs);
         }
     }
 }

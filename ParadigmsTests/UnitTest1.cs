@@ -136,25 +136,25 @@ namespace ParadigmsTests
 
         static public IEnumerable<TestCaseData> combination_tests_polynomial_div()
         {
-            yield return new TestCaseData(new Polynomial(new double[] { 3.0, 19/3, 2.0, -8.0 }),
+            yield return new TestCaseData(new Polynomial(new double[] { 3.0, -6.333333333333333, 2.0, -8.0 }),
                                           new Polynomial(new double[] { -1.0, 2.0 }),
-                                          new Polynomial(new double[] { -11 / 3, -1.0, -4.0 })).SetName("[Polynomial_div] test 1");
+                                          new Polynomial(new double[] { -3.666666666666667, -1.0, -4.0 })).SetName("[Polynomial_div] test 1");
 
-            yield return new TestCaseData(new Polynomial(new double[] { 5.0, 3.0, 21.0 }),
-                                          new Polynomial(new double[] { 2.0, 1.0, 6.0, 2.0 }),
-                                          new Polynomial(new double[] { 10.0, 11.0, 75.0, 49.0, 132.0, 42.0 })).SetName("[Polynomial_div] test 2");
+            yield return new TestCaseData(new Polynomial(new double[] { 5.0, 0.0, 2.0 }),
+                                          new Polynomial(new double[] { 2.0, 1.0}),
+                                          new Polynomial(new double[] { -4.0, 2.0})).SetName("[Polynomial_div] test 2");
 
-            yield return new TestCaseData(new Polynomial(new double[] { 5.0, 0.0, 1.0 }),
-                                          new Polynomial(new double[] { 5.0, 1.0 }),
-                                          new Polynomial(new double[] { 25.0, 5.0, 5.0, 1.0 })).SetName("[Polynomial_div] test 3");
+            yield return new TestCaseData(new Polynomial(new double[] { 0.0, 0.0, 0.0, 1.0 }),
+                                          new Polynomial(new double[] { 4.0, 2.0, 1.0 }),
+                                          new Polynomial(new double[] { -2.0, 1.0})).SetName("[Polynomial_div] test 3");
 
-            yield return new TestCaseData(new Polynomial(new double[] { 0.0, 0.0, 2.0 }),
-                                          new Polynomial(new double[] { 0.0, 0.0, 2.0 }),
-                                          new Polynomial(new double[] { 0.0, 0.0, 0.0, 0.0, 4.0 })).SetName("[Polynomial_div] test 4");
+            yield return new TestCaseData(new Polynomial(new double[] { 0.0, 1.0}),
+                                          new Polynomial(new double[] { 0.0, 1.0}),
+                                          new Polynomial(new double[] { 1.0})).SetName("[Polynomial_div] test 4");
 
-            yield return new TestCaseData(new Polynomial(new double[] { 0.0, 12.5 }),
-                                          new Polynomial(new double[] { 0.0, 3.5 }),
-                                          new Polynomial(new double[] { 0.0, 0.0, 43.75 })).SetName("[Polynomial_div] test 5"); ;
+            yield return new TestCaseData(new Polynomial(new double[] { 1.0, 0.0, 1.0 }),
+                                          new Polynomial(new double[] { 5.0, 0.0, 1.0 }),
+                                          new Polynomial(new double[] { 1.0})).SetName("[Polynomial_div] test 5"); ;
         }
 
         [TestCaseSource("combination_tests_polynomial_div")]
